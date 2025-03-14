@@ -1,0 +1,84 @@
+{
+    "titulo": "Juego de Palabras",
+    "descripcionJuego": "Adivina las palabras correctas en cada nivel.",
+    "niveles": [
+      {
+        "nivel": 1,
+        "descripcion": "Palabras de 5 letras que empiezan con 'a'.",
+        "patron": "^a[a-zA-Z]{4}$",
+        "dificultad": "principiante",
+        "palabrasCorrectas": [
+          "arbol",
+          "amigo",
+          "aviso",
+          "ancla",
+          "arena"
+        ]
+      },
+      {
+        "nivel": 2,
+        "descripcion": "Palabras de 7 letras que terminan con 'o'.",
+        "patron": "^[a-zA-Z]{6}o$",
+        "dificultad": "intermedio",
+        "palabrasCorrectas": [
+          "carrozo",
+          "cascajo",
+          "cerezo",
+          "ciclado",
+          "ciclano"
+        ]
+      },
+      {
+        "nivel": 3,
+        "descripcion": "Palabras de cualquier longitud que contengan 'll'.",
+        "patron": "^.ll.$",
+        "dificultad": "avanzado",
+        "palabrasCorrectas": [
+          "llave",
+          "llanto",
+          "lluvia",
+          "llama",
+          "llanura"
+        ]
+      },
+      {
+        "nivel": 4,
+        "descripcion": "Palabras de 6 letras que contienen 'ción'.",
+        "patron": "^[a-zA-Z]{0,2}cion[a-zA-Z]{0,2}$",
+        "dificultad": "intermedio",
+        "palabrasCorrectas": [
+          "acción",
+          "emoción",
+          "canción",
+          "lección",
+          "porción"
+        ]
+      },
+      {
+        "nivel": 5,
+        "descripcion": "Palabras que empiezan con 'b', vocal y terminan con 'a'.",
+        "patron": "b[aeiou]\\w*a\\b",
+        "dificultad": "principiante",
+        "palabrasCorrectas": [
+          "bata",
+          "botella",
+          "balanza",
+          "batata",
+          "balada"
+        ]
+      },
+      {
+        "nivel": 6,
+        "descripcion": "Palabras que empiezan con 'p', vocal y terminan con 'o'.",
+        "patron": "p[aeiou]\\w*o\\b",
+        "dificultad": "principiante",
+        "palabrasCorrectas": [
+          "pipeta",
+          "plato",
+          "póster",
+          "palito",
+          "pelado"
+        ]
+      }
+    ]
+  }
