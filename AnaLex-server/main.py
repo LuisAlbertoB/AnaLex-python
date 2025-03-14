@@ -21,20 +21,43 @@ def automata(cadena, nivel):
 
     return estado == estado_final  # Verifica si llegó al estado final
 
+# Función para mostrar las instrucciones del nivel
+def mostrar_instrucciones(nivel):
+    instrucciones = {
+        1: "Nivel 1: Palabras de 5 letras que empiezan con 'a'.",
+        2: "Nivel 2: Palabras de 7 letras que terminan con 'o'.",
+        3: "Nivel 3: Palabras de 6 letras que empiezen con 'll'.",
+        4: "Nivel 4: Palabras de 6 letras que contienen 'ción'.",
+        5: "Nivel 5: Palabras de 7 letras que empiezan con 'b', luego vocal vocal y terminan con 'a'.",
+        6: "Nivel 6: Palabras de 5 que empiezan con 'p', luego una vocal y terminan con 'o'.",
+    }
+    print(instrucciones[nivel])
+
 # Función principal
 def main():
     print("Bienvenido al Juego de Palabras")
-    nivel = int(input("Selecciona un nivel (1-6): "))
-    palabra = input("Ingresa una palabra: ")
+    print("Instrucciones generales:")
+    print("- Debes ingresar una palabra que cumpla con las reglas del nivel actual.")
+    print("- Si la palabra es válida, avanzarás al siguiente nivel.")
+    print("- Si la palabra no es válida, tendrás que intentarlo de nuevo.")
+    print("- ¡Buena suerte!\n")
 
-    if nivel < 1 or nivel > 6:
-        print("Nivel no válido.")
-        return
+    nivel_actual = 1  # Comenzar en el nivel más bajo
+    nivel_maximo = 6  # Nivel más alto
 
-    if automata(palabra, nivel):
-        print(f"'{palabra}' es válida en el Nivel {nivel}.")
-    else:
-        print(f"'{palabra}' no es válida en el Nivel {nivel}.")
+    while nivel_actual <= nivel_maximo:
+        # Mostrar instrucciones del nivel actual
+        mostrar_instrucciones(nivel_actual)
+
+        palabra = input(f"Ingresa una palabra para el Nivel {nivel_actual}: ")
+
+        if automata(palabra, nivel_actual):
+            print(f"¡Correcto! '{palabra}' es válida en el Nivel {nivel_actual}.\n")
+            nivel_actual += 1  # Avanzar al siguiente nivel
+        else:
+            print(f"Incorrecto. '{palabra}' no es válida en el Nivel {nivel_actual}. Intenta de nuevo.\n")
+
+    print("¡Felicidades! Has completado todos los niveles. ¡Eres un campeón/ona de las palabras!")
 
 if __name__ == "__main__":
     main()
